@@ -2178,3 +2178,12 @@ body{
     }
 }
 
+
+
+
+.fade-up,
+.slide-left,
+.slide-right{
+    opacity:1 !important;
+    transform:none !important;
+}
