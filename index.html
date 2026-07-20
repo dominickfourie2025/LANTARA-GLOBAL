@@ -3,26 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lantara Global - Connecting Schools with Native English Teachers</title>
+    <title>Lantara Global - International Teaching Careers in China</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header / Navigation -->
+    <!-- Navigation -->
     <header class="header">
         <div class="container">
             <nav class="navbar">
                 <div class="logo">
-                    <img src="https://via.placeholder.com/180x50/1a3a5c/ffffff?text=LANTARA+GLOBAL" alt="Lantara Global Logo">
+                    <img src="Lantara Logo.png" alt="Lantara Global" class="logo-img">
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="#schools">For Schools</a></li>
-                    <li><a href="#teachers">For Teachers</a></li>
+                    <li><a href="#schools">Schools</a></li>
+                    <li><a href="#teachers">Teachers</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#process">Process</a></li>
-                    <li><a href="#contact" class="btn-nav">Contact</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" class="lang-switch">中文</a></li>
+                    <li><a href="#contact" class="btn-nav">Get Started</a></li>
                 </ul>
                 <div class="hamburger">
                     <span></span>
@@ -38,15 +39,21 @@
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
+                    <span class="hero-label">INTERNATIONAL TEACHING CAREERS IN CHINA</span>
                     <h1>Connecting Chinese Schools with Qualified, Native English-speaking Teachers</h1>
                     <p class="hero-subtitle">Professional recruitment for China's education sector, connecting reputable schools with carefully screened teachers from Native English-speaking countries.</p>
                     <div class="hero-buttons">
                         <a href="#schools" class="btn btn-primary">For Schools</a>
                         <a href="#teachers" class="btn btn-secondary">For Teachers</a>
                     </div>
+                    <div class="trust-indicators">
+                        <span>✓ 90+ Schools Served</span>
+                        <span>✓ 600+ Teachers Placed</span>
+                        <span>✓ 15+ Countries</span>
+                    </div>
                 </div>
                 <div class="hero-image">
-                    <img src="https://picsum.photos/seed/education/600/400" alt="Teachers and students in classroom">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&h=600&fit=crop" alt="Teacher interacting with students in classroom">
                 </div>
             </div>
         </div>
@@ -58,21 +65,31 @@
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <img src="https://via.placeholder.com/60x60/1a3a5c/ffffff?text=✓" alt="Rigorous Screening">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#C99A3B" stroke-width="1.5">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                            <polyline points="22 4 12 14.01 9 11.01"/>
+                        </svg>
                     </div>
                     <h3>Rigorous Screening</h3>
                     <p>Every candidate is carefully screened, interviewed and reference-checked to ensure classroom excellence.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <img src="https://via.placeholder.com/60x60/1a3a5c/ffffff?text=🌏" alt="China Education Experts">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#C99A3B" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="2" y1="12" x2="22" y2="12"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
                     </div>
                     <h3>China Education Experts</h3>
                     <p>Our team understands China's education landscape and the unique needs of schools across the country.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <img src="https://via.placeholder.com/60x60/1a3a5c/ffffff?text=🤝" alt="Partnership Focused">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#C99A3B" stroke-width="1.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <polyline points="9 12 11 14 15 10"/>
+                        </svg>
                     </div>
                     <h3>Partnership Focused</h3>
                     <p>We build long-term relationships with schools based on trust, reliability and outstanding results.</p>
@@ -84,14 +101,15 @@
     <!-- For Schools Section -->
     <section id="schools" class="schools">
         <div class="container">
-            <div class="section-header">
-                <h2>FOR SCHOOLS</h2>
-                <h3>Recruiting Teachers. Building Stronger Schools.</h3>
-            </div>
-            <div class="schools-grid">
-                <div class="schools-content">
+            <div class="section-grid reverse">
+                <div class="section-image">
+                    <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&h=450&fit=crop" alt="Prestigious school campus">
+                </div>
+                <div class="section-content">
+                    <span class="section-label">FOR SCHOOLS</span>
+                    <h2>Recruiting Teachers. Building Stronger Schools.</h2>
                     <p>We provide end-to-end recruitment solutions tailored to your school's requirements. From candidate search to arrival support, we handle the details so you can focus on education.</p>
-                    <ul class="schools-list">
+                    <ul class="feature-list">
                         <li>Access to a global network of qualified teachers</li>
                         <li>Rigorous screening and vetting process</li>
                         <li>Interview coordination and school matching</li>
@@ -99,24 +117,45 @@
                     </ul>
                     <a href="#contact" class="btn btn-primary">Get Started</a>
                 </div>
-                <div class="schools-image">
-                    <img src="https://picsum.photos/seed/school/500/400" alt="School classroom">
+            </div>
+        </div>
+    </section>
+
+    <!-- For Teachers Section -->
+    <section id="teachers" class="teachers">
+        <div class="container">
+            <div class="section-grid">
+                <div class="section-content">
+                    <span class="section-label">FOR TEACHERS</span>
+                    <h2>Find Your Dream Teaching Position in China</h2>
+                    <p>We connect qualified native English-speaking teachers with prestigious schools across China. From application to arrival, we support you every step of the way.</p>
+                    <ul class="feature-list">
+                        <li>Access to top-tier schools and competitive packages</li>
+                        <li>Full visa and relocation support</li>
+                        <li>Professional development opportunities</li>
+                        <li>Ongoing support throughout your contract</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Apply Now</a>
+                </div>
+                <div class="section-image">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=600&h=450&fit=crop" alt="Teacher with engaged students">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Recruitment Process Section -->
+    <!-- Process Section -->
     <section id="process" class="process">
         <div class="container">
-            <div class="section-header">
-                <h2>OUR RECRUITMENT PROCESS</h2>
+            <div class="process-header">
+                <span class="section-label">OUR RECRUITMENT PROCESS</span>
+                <h2>Six Steps to Success</h2>
             </div>
-            <div class="process-grid">
+            <div class="process-timeline">
                 <div class="process-step">
                     <div class="step-number">1</div>
                     <h4>Consultation</h4>
-                    <p>We learn about your schools needs and requirements.</p>
+                    <p>We learn about your school's needs and requirements.</p>
                 </div>
                 <div class="process-step">
                     <div class="step-number">2</div>
@@ -150,15 +189,16 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <div class="about-grid">
-                <div class="about-image">
-                    <img src="https://picsum.photos/seed/global/500/400" alt="Global education">
+            <div class="section-grid reverse">
+                <div class="section-image">
+                    <img src="https://images.unsplash.com/photo-1489749798305-4a8474faf6f1?w=600&h=450&fit=crop" alt="China landscape and education">
                 </div>
-                <div class="about-content">
-                    <h2>ABOUT LANTARA GLOBAL</h2>
+                <div class="section-content">
+                    <span class="section-label">ABOUT LANTARA GLOBAL</span>
+                    <h2>Building Long-term Partnerships in Education</h2>
                     <p>Lantara Global is a specialist education recruitment agency dedicated to connecting Chinese schools with qualified native English-speaking teachers from recognised Native English-speaking countries.</p>
                     <p>Our mission is to build long-term partnerships that enhance learning, inspire students and strengthen schools.</p>
-                    <div class="about-stats">
+                    <div class="stats">
                         <div class="stat">
                             <span class="stat-number">90+</span>
                             <span class="stat-label">Schools Served</span>
@@ -180,46 +220,49 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <div class="section-header">
-                <h2>GET IN TOUCH</h2>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="organization">Organization / School</label>
-                            <input type="text" id="organization" name="organization">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" name="message" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
+            <div class="contact-wrapper">
+                <div class="contact-header">
+                    <span class="section-label">GET IN TOUCH</span>
+                    <h2>Let's Start a Conversation</h2>
                 </div>
-                <div class="contact-info">
-                    <div class="info-item">
-                        <h4>Contact Information</h4>
-                        <p>📞 9:00 AM – 6:00 PM (GMT+8)</p>
-                        <p>🌏 Serving Schools Across China</p>
-                        <p>🤝 Connecting Teachers Worldwide</p>
+                <div class="contact-grid">
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="organization">Organization / School</label>
+                                <input type="text" id="organization" name="organization">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" name="message" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
                     </div>
-                    <div class="info-item">
-                        <h4>Quick Links</h4>
-                        <ul>
-                            <li><a href="#schools">For Schools</a></li>
-                            <li><a href="#teachers">For Teachers</a></li>
-                            <li><a href="#about">About Us</a></li>
-                            <li><a href="#process">Recruitment Process</a></li>
-                        </ul>
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <h4>Contact Information</h4>
+                            <p>📞 9:00 AM – 6:00 PM (GMT+8)</p>
+                            <p>🌏 Serving Schools Across China</p>
+                            <p>🤝 Connecting Teachers Worldwide</p>
+                        </div>
+                        <div class="info-item">
+                            <h4>Quick Links</h4>
+                            <ul>
+                                <li><a href="#schools">For Schools</a></li>
+                                <li><a href="#teachers">For Teachers</a></li>
+                                <li><a href="#about">About Us</a></li>
+                                <li><a href="#process">Recruitment Process</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -231,22 +274,31 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="https://via.placeholder.com/180x50/ffffff/1a3a5c?text=LANTARA+GLOBAL" alt="Lantara Global">
-                    <p>Connecting Chinese Schools with Qualified, Native English-speaking Teachers</p>
+                    <img src="Lantara Logo.png" alt="Lantara Global" class="footer-logo">
+                    <p>International Teaching Careers in China</p>
                 </div>
                 <div class="footer-links">
-                    <h4>Quick Links</h4>
+                    <h4>Navigation</h4>
                     <ul>
-                        <li><a href="#schools">For Schools</a></li>
-                        <li><a href="#teachers">For Teachers</a></li>
+                        <li><a href="#schools">Schools</a></li>
+                        <li><a href="#teachers">Teachers</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
+                <div class="footer-links">
+                    <h4>Connect</h4>
+                    <ul>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">WeChat</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </div>
                 <div class="footer-contact">
                     <h4>Contact</h4>
-                    <p>📧 info@lantaraglobal.com</p>
-                    <p>📞 9:00 AM – 6:00 PM (GMT+8)</p>
+                    <p>info@lantaraglobal.com</p>
+                    <p>9:00 AM – 6:00 PM (GMT+8)</p>
+                    <a href="#" class="lang-switch-footer">中文</a>
                 </div>
             </div>
             <div class="footer-bottom">
