@@ -1,1177 +1,761 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lantara Global | Native English Teacher Recruitment for Chinese Schools</title>
-  <meta name="description" content="Lantara Global connects qualified native English-speaking teachers with Chinese schools through trusted international recruitment." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Lantara Global · International Education Recruitment</title>
+  <!-- Fonts: Serif (Playfair Display) + Sans (Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* ===================== RESET & BASE ===================== */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
-      color: #2d2d2d;
-      background: #fff;
-      overflow-x: hidden;
-    }
-    img { max-width: 100%; display: block; }
-    a { text-decoration: none; color: inherit; }
-    ul { list-style: none; }
-
-    /* ===================== VARIABLES ===================== */
-    :root {
-      --navy: #0d1b3e;
-      --navy-light: #162347;
-      --gold: #c9a84c;
-      --gold-dark: #a8892f;
-      --white: #ffffff;
-      --off-white: #f8f7f4;
-      --gray-light: #f2f1ee;
-      --charcoal: #3a3a3a;
-      --charcoal-light: #5a5a5a;
-      --max-w: 1400px;
-      --section-pad: 120px;
+      background: #ffffff;
+      color: #1e1e2a;
+      line-height: 1.6;
     }
 
-    /* ===================== UTILITIES ===================== */
     .container {
-      max-width: var(--max-w);
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 0 48px;
-    }
-    .serif { font-family: 'Cormorant Garamond', serif; }
-    .gold-text { color: var(--gold); }
-    .section-label {
-      display: inline-block;
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 16px;
-    }
-    .gold-divider {
-      width: 60px;
-      height: 2px;
-      background: var(--gold);
-      margin: 20px auto 32px;
-    }
-    .gold-divider.left { margin: 20px 0 32px; }
-    .btn {
-      display: inline-block;
-      padding: 14px 32px;
-      border-radius: 6px;
-      font-family: 'Inter', sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      border: none;
-    }
-    .btn-gold {
-      background: var(--gold);
-      color: var(--white);
-    }
-    .btn-gold:hover {
-      background: var(--gold-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(201,168,76,0.3);
-    }
-    .btn-outline-gold {
-      background: transparent;
-      color: var(--white);
-      border: 1.5px solid var(--gold);
-    }
-    .btn-outline-gold:hover {
-      background: var(--gold);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(201,168,76,0.3);
-    }
-    .btn-navy {
-      background: var(--navy);
-      color: var(--white);
-    }
-    .btn-navy:hover {
-      background: var(--gold);
-      color: var(--white);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(13,27,62,0.25);
+      padding: 0 2rem;
     }
 
-    /* ===================== FADE-UP ANIMATION ===================== */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ===================== NAVIGATION ===================== */
-    nav {
+    /* ---- NAVIGATION (fixed) ---- */
+    .navbar {
       position: fixed;
       top: 0;
       left: 0;
-      right: 0;
-      z-index: 1000;
-      background: var(--navy);
+      width: 100%;
       height: 90px;
+      background: #0a1a2f; /* deep navy */
       display: flex;
       align-items: center;
-      transition: height 0.3s ease, box-shadow 0.3s ease;
+      justify-content: center;
+      z-index: 1000;
+      transition: height 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      padding: 0 2rem;
     }
-    nav.scrolled {
-      height: 68px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.25);
+
+    .navbar.scrolled {
+      height: 72px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
     }
-    .nav-inner {
-      max-width: var(--max-w);
+
+    .nav-container {
+      max-width: 1400px;
       width: 100%;
-      margin: 0 auto;
-      padding: 0 48px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    .nav-logo {
+
+    /* logo */
+    .logo {
       display: flex;
-      flex-direction: column;
-      line-height: 1;
+      align-items: baseline;
+      gap: 4px;
+      flex-wrap: wrap;
     }
-    .nav-logo-top {
-      font-size: 22px;
-      font-family: 'Cormorant Garamond', serif;
+    .logo-gold {
+      color: #c9a84c; /* warm gold */
+      font-family: 'Playfair Display', serif;
+      font-size: 2.1rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+    .logo-white {
+      color: #fff;
+      font-family: 'Inter', sans-serif;
       font-weight: 500;
-      letter-spacing: 0.05em;
+      font-size: 1.3rem;
+      letter-spacing: 0.4px;
     }
-    .nav-logo-top .g { color: var(--gold); font-size: 26px; }
-    .nav-logo-top .lantara { color: var(--white); }
-    .nav-logo-top .global { color: var(--gold); }
-    .nav-logo-tagline {
-      font-size: 9px;
-      color: rgba(255,255,255,0.5);
-      letter-spacing: 0.18em;
+    .logo-gold-global {
+      color: #c9a84c;
+      font-weight: 400;
+      font-size: 1.3rem;
+      font-family: 'Inter', sans-serif;
+    }
+    .logo-tagline {
+      display: block;
+      font-size: 0.55rem;
+      letter-spacing: 1.5px;
+      color: rgba(255,255,255,0.65);
       text-transform: uppercase;
-      margin-top: 4px;
+      margin-top: -4px;
+      width: 100%;
     }
+
+    /* nav links */
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 8px;
-    }
-    .nav-links a {
-      color: rgba(255,255,255,0.8);
-      font-size: 13px;
+      gap: 2rem;
+      list-style: none;
+      font-size: 0.9rem;
       font-weight: 500;
-      letter-spacing: 0.06em;
-      padding: 6px 14px;
-      position: relative;
-      transition: color 0.2s ease;
+      color: #fff;
     }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 14px;
-      right: 14px;
-      height: 1.5px;
-      background: var(--gold);
-      transform: scaleX(0);
-      transition: transform 0.25s ease;
+    .nav-links li a {
+      color: #f0f2f5;
+      text-decoration: none;
+      transition: color 0.2s, border-bottom 0.2s;
+      padding-bottom: 4px;
+      border-bottom: 2px solid transparent;
+      letter-spacing: 0.3px;
     }
-    .nav-links a:hover { color: var(--gold); }
-    .nav-links a:hover::after { transform: scaleX(1); }
-    .nav-cta {
-      border: 1.5px solid var(--gold);
-      color: var(--gold) !important;
-      border-radius: 5px;
-      padding: 9px 22px !important;
-      font-size: 12px !important;
-      letter-spacing: 0.12em !important;
-      font-weight: 600 !important;
-      transition: background 0.2s ease, color 0.2s ease !important;
+    .nav-links li a:hover {
+      color: #c9a84c;
+      border-bottom: 2px solid #c9a84c;
     }
-    .nav-cta:hover {
-      background: var(--gold) !important;
-      color: var(--navy) !important;
+    .nav-links .get-in-touch {
+      border: 1.5px solid #c9a84c;
+      border-radius: 40px;
+      padding: 0.5rem 1.5rem;
+      background: transparent;
+      color: #fff;
+      font-weight: 600;
+      transition: 0.2s;
     }
-    .nav-cta::after { display: none !important; }
+    .nav-links .get-in-touch:hover {
+      background: #c9a84c;
+      color: #0a1a2f;
+      border-color: #c9a84c;
+    }
+
+    /* mobile hamburger */
     .hamburger {
       display: none;
       flex-direction: column;
       gap: 5px;
+      background: transparent;
+      border: none;
       cursor: pointer;
-      padding: 8px;
     }
     .hamburger span {
-      width: 24px;
-      height: 2px;
-      background: var(--white);
-      border-radius: 2px;
-      transition: all 0.3s ease;
+      width: 28px;
+      height: 2.5px;
+      background: #fff;
+      border-radius: 4px;
+      transition: 0.2s;
     }
 
-    /* ===================== HERO ===================== */
+    /* ---- HERO ---- */
     .hero {
-      height: 700px;
       margin-top: 90px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      height: 700px;
+      background: #0a1a2f;
+      display: flex;
+      align-items: center;
+      position: relative;
       overflow: hidden;
     }
+    .hero-content {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
     .hero-text {
-      background: var(--navy);
+      flex: 1 1 45%;
+      padding: 3rem 3rem 3rem 4rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 80px 64px 80px 80px;
+      color: #fff;
+      background: rgba(10,26,47,0.3);
+      position: relative;
+      z-index: 2;
     }
     .hero-text h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(36px, 3.5vw, 52px);
+      font-family: 'Playfair Display', serif;
       font-weight: 400;
-      line-height: 1.25;
-      color: var(--white);
-      margin-bottom: 28px;
+      font-size: 3.4rem;
+      line-height: 1.2;
+      max-width: 700px;
     }
-    .hero-text h1 .gold-line { color: var(--gold); }
+    .hero-text h1 .gold-highlight {
+      color: #c9a84c;
+      font-weight: 500;
+      border-bottom: 3px solid #c9a84c;
+      display: inline-block;
+      padding-bottom: 0.1rem;
+    }
     .hero-text p {
-      font-size: 16px;
-      line-height: 1.75;
-      color: rgba(255,255,255,0.75);
-      margin-bottom: 40px;
-      max-width: 440px;
+      font-size: 1.1rem;
+      max-width: 460px;
+      margin: 1.2rem 0 2rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+      font-weight: 300;
     }
     .hero-buttons {
       display: flex;
-      gap: 16px;
-      margin-bottom: 48px;
+      gap: 1.2rem;
+      flex-wrap: wrap;
     }
-    .trust-indicators {
+    .btn-gold {
+      background: #c9a84c;
+      border: none;
+      color: #0a1a2f;
+      padding: 0.9rem 2.5rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.8px;
+      transition: 0.2s;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(201,168,76,0.25);
+    }
+    .btn-gold:hover {
+      background: #b8933a;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(201,168,76,0.35);
+    }
+    .btn-outline-gold {
+      background: transparent;
+      border: 1.5px solid #c9a84c;
+      color: #fff;
+      padding: 0.9rem 2.5rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.8px;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+    .btn-outline-gold:hover {
+      background: #c9a84c;
+      color: #0a1a2f;
+      transform: translateY(-2px);
+    }
+
+    /* trust indicators */
+    .trust-row {
       display: flex;
-      gap: 0;
+      gap: 2rem;
+      margin-top: 2.5rem;
       align-items: center;
+      flex-wrap: wrap;
     }
     .trust-item {
       display: flex;
       align-items: center;
-      gap: 10px;
-      padding-right: 24px;
-      margin-right: 24px;
-      border-right: 1px solid rgba(255,255,255,0.15);
+      gap: 0.6rem;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.85rem;
+      font-weight: 400;
     }
-    .trust-item:last-child { border-right: none; padding-right: 0; margin-right: 0; }
-    .trust-icon {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: rgba(201,168,76,0.15);
-      border: 1px solid var(--gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
+    .trust-item i {
+      color: #c9a84c;
+      font-size: 1.2rem;
+      width: 1.8rem;
+      text-align: center;
     }
-    .trust-icon svg { width: 14px; height: 14px; stroke: var(--gold); }
-    .trust-text { font-size: 11px; color: rgba(255,255,255,0.65); letter-spacing: 0.04em; font-weight: 500; }
+    .trust-divider {
+      width: 1px;
+      height: 28px;
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* hero image */
     .hero-image {
+      flex: 1 1 55%;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600"><rect width="800" height="600" fill="%230a1a2f"/><circle cx="400" cy="300" r="200" fill="%23c9a84c" opacity="0.25"/><circle cx="300" cy="200" r="80" fill="%23c9a84c" opacity="0.2"/><circle cx="550" cy="420" r="120" fill="%23c9a84c" opacity="0.15"/></svg>') center/cover no-repeat;
+      background-size: cover;
+      background-blend-mode: overlay;
       position: relative;
-      overflow: hidden;
     }
-    .hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 8s ease;
-    }
-    .hero-image:hover img { transform: scale(1.03); }
-    .hero-image-overlay {
+    .hero-image::after {
+      content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to right, rgba(13,27,62,0.3), transparent);
+      background: rgba(10,26,47,0.20);
     }
 
-    /* ===================== WHY LANTARA ===================== */
-    .why-lantara {
-      background: var(--white);
-      padding: var(--section-pad) 0;
-      text-align: center;
+    /* sections */
+    section {
+      padding: 120px 0;
     }
-    .why-lantara h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(32px, 3vw, 46px);
+    .section-title {
+      font-family: 'Playfair Display', serif;
       font-weight: 400;
-      color: var(--navy);
-      letter-spacing: 0.08em;
+      font-size: 2.8rem;
+      text-align: center;
+      color: #0a1a2f;
+      letter-spacing: 0.5px;
     }
-    .why-lantara .section-intro {
-      max-width: 620px;
-      margin: 0 auto;
-      font-size: 16px;
-      line-height: 1.8;
-      color: var(--charcoal-light);
+    .gold-divider {
+      width: 70px;
+      height: 2.5px;
+      background: #c9a84c;
+      margin: 0.8rem auto 1.8rem;
     }
-    .features-grid {
+    .section-sub {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      color: #3a3a4a;
+      font-weight: 300;
+      font-size: 1.15rem;
+    }
+
+    /* why lantara columns */
+    .feature-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 48px;
-      margin-top: 72px;
+      grid-template-columns: repeat(3,1fr);
+      gap: 2.5rem;
+      margin-top: 2rem;
     }
     .feature-card {
-      padding: 48px 36px;
       text-align: center;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      cursor: default;
+      padding: 1.5rem 1rem;
+      transition: 0.25s;
+      border-radius: 24px;
     }
-    .feature-card:hover {
-      box-shadow: 0 12px 48px rgba(13,27,62,0.1);
-      transform: translateY(-4px);
+    .feature-card i {
+      font-size: 3.6rem;
+      color: #c9a84c;
+      border: 1.5px solid #c9a84c;
+      border-radius: 50%;
+      padding: 1.2rem;
+      width: 100px;
+      height: 100px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.2s;
     }
-    .feature-icon {
-      width: 72px;
-      height: 72px;
-      margin: 0 auto 28px;
-      transition: transform 0.3s ease;
+    .feature-card:hover i {
+      transform: scale(1.04);
+      box-shadow: 0 10px 28px rgba(201,168,76,0.15);
     }
-    .feature-card:hover .feature-icon { transform: scale(1.08); }
-    .feature-icon svg { width: 100%; height: 100%; }
     .feature-card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
+      font-size: 1.4rem;
+      margin: 1.2rem 0 0.6rem;
+      color: #0a1a2f;
       font-weight: 500;
-      color: var(--navy);
-      margin-bottom: 14px;
     }
     .feature-card p {
-      font-size: 15px;
-      line-height: 1.75;
-      color: var(--charcoal-light);
+      color: #3f3f50;
+      font-weight: 300;
     }
 
-    /* ===================== SPLIT SECTIONS ===================== */
-    .split-section {
-      display: grid;
-      min-height: 580px;
-    }
-    .split-section.schools { grid-template-columns: 45fr 55fr; }
-    .split-section.teachers { grid-template-columns: 55fr 45fr; }
-    .split-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 80px 80px 80px 80px;
-    }
-    .split-section.schools .split-content { padding: 80px 64px 80px 80px; background: var(--white); }
-    .split-section.teachers .split-content { padding: 80px 80px 80px 64px; background: var(--off-white); }
-    .split-content h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(28px, 2.5vw, 40px);
-      font-weight: 400;
-      color: var(--navy);
-      line-height: 1.3;
-      margin-bottom: 20px;
-    }
-    .split-content p {
-      font-size: 15px;
-      line-height: 1.8;
-      color: var(--charcoal-light);
-      margin-bottom: 28px;
-    }
-    .split-list {
-      margin-bottom: 36px;
-    }
-    .split-list li {
+    /* split layouts */
+    .split {
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-size: 14px;
-      color: var(--charcoal);
-      padding: 8px 0;
-      border-bottom: 1px solid rgba(0,0,0,0.06);
+      gap: 3rem;
     }
-    .split-list li:last-child { border-bottom: none; }
-    .list-bullet {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--gold);
-      flex-shrink: 0;
+    .split .text {
+      flex: 1;
     }
-    .check-icon { flex-shrink: 0; }
-    .check-icon svg { width: 16px; height: 16px; stroke: var(--gold); }
-    .split-image {
-      overflow: hidden;
-      position: relative;
+    .split .image {
+      flex: 1.2;
+      min-height: 320px;
+      background: #d9d9e0;
+      border-radius: 24px;
+      background-size: cover;
+      background-position: center;
+      transition: 0.3s;
     }
-    .split-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 6s ease;
+    .split .image:hover {
+      transform: scale(1.01);
     }
-    .split-image:hover img { transform: scale(1.04); }
-
-    /* ===================== TIMELINE ===================== */
-    .timeline-section {
-      background: var(--gray-light);
-      padding: var(--section-pad) 0;
-      text-align: center;
+    .gold-label {
+      color: #c9a84c;
+      font-weight: 600;
+      letter-spacing: 1px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
     }
-    .timeline-section h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(28px, 2.5vw, 42px);
+    .split h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
       font-weight: 400;
-      color: var(--navy);
-      letter-spacing: 0.08em;
+      color: #0a1a2f;
+      margin: 0.5rem 0 1rem;
     }
+    .split ul {
+      list-style: none;
+      margin: 1rem 0 1.6rem;
+    }
+    .split ul li {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 0.5rem;
+      font-weight: 300;
+    }
+    .split ul li i {
+      color: #c9a84c;
+      font-size: 0.9rem;
+    }
+    .btn-navy {
+      background: #0a1a2f;
+      border: none;
+      color: #fff;
+      padding: 0.8rem 2.8rem;
+      border-radius: 60px;
+      font-weight: 500;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+    .btn-navy:hover {
+      background: #c9a84c;
+      color: #0a1a2f;
+      transform: translateY(-2px);
+    }
+
+    /* timeline */
     .timeline {
       display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 0;
-      margin-top: 72px;
+      justify-content: space-between;
       position: relative;
+      margin: 2.5rem 0 1rem;
     }
     .timeline::before {
       content: '';
       position: absolute;
       top: 40px;
-      left: 10%;
-      right: 10%;
+      left: 5%;
+      width: 90%;
       height: 2px;
-      background: var(--gold);
-      opacity: 0.4;
+      background: #c9a84c;
     }
-    .timeline-step {
+    .timeline-item {
+      text-align: center;
+      z-index: 2;
       flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-      cursor: default;
     }
     .timeline-icon {
-      width: 80px;
-      height: 80px;
+      background: #0a1a2f;
+      width: 70px;
+      height: 70px;
       border-radius: 50%;
-      background: var(--navy);
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 20px;
-      position: relative;
-      z-index: 1;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border: 3px solid transparent;
+      margin: 0 auto 0.8rem;
+      border: 2px solid #c9a84c;
+      color: #fff;
+      font-size: 1.5rem;
+      transition: 0.2s;
     }
-    .timeline-step:hover .timeline-icon {
-      transform: scale(1.12);
-      border-color: var(--gold);
-      box-shadow: 0 0 0 4px rgba(201,168,76,0.15);
+    .timeline-item:hover .timeline-icon {
+      transform: scale(1.05);
+      box-shadow: 0 0 0 6px rgba(201,168,76,0.25);
     }
-    .timeline-icon svg { width: 28px; height: 28px; stroke: var(--white); }
-    .timeline-num {
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--gold);
-      letter-spacing: 0.1em;
-      margin-bottom: 8px;
-    }
-    .timeline-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 18px;
-      color: var(--navy);
+    .timeline-item p {
       font-weight: 500;
-      margin-bottom: 8px;
+      color: #0a1a2f;
+      font-size: 0.9rem;
     }
-    .timeline-desc {
-      font-size: 13px;
-      color: var(--charcoal-light);
-      line-height: 1.6;
-      padding: 0 12px;
-    }
-
-    /* ===================== ABOUT ===================== */
-    .about-section {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 520px;
-    }
-    .about-content {
-      background: var(--navy);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 80px;
-    }
-    .about-content h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(28px, 2.5vw, 40px);
-      font-weight: 400;
-      color: var(--white);
-      letter-spacing: 0.06em;
-      margin-bottom: 0;
-    }
-    .about-content p {
-      font-size: 15px;
-      line-height: 1.85;
-      color: rgba(255,255,255,0.72);
-      margin-bottom: 16px;
-    }
-    .about-image {
-      overflow: hidden;
-      position: relative;
-    }
-    .about-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .timeline-item small {
+      display: block;
+      color: #5a5a6a;
+      font-weight: 300;
+      font-size: 0.75rem;
     }
 
-    /* ===================== CONTACT ===================== */
-    .contact-section {
-      background: var(--white);
-      padding: var(--section-pad) 0;
-    }
-    .contact-section .section-heading {
-      text-align: center;
-      margin-bottom: 72px;
-    }
-    .contact-section h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(32px, 3vw, 48px);
-      font-weight: 400;
-      color: var(--navy);
-      letter-spacing: 0.08em;
-    }
+    /* contact */
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
+      gap: 4rem;
+      margin-top: 2rem;
     }
-    .contact-form { }
-    .form-group { margin-bottom: 24px; }
-    .form-group label {
-      display: block;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--charcoal-light);
-      margin-bottom: 8px;
-    }
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
+    .contact-form input, .contact-form textarea {
       width: 100%;
-      padding: 14px 18px;
-      border: 1.5px solid #e0ddd8;
-      border-radius: 6px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid #dadce0;
+      border-radius: 40px;
       font-family: 'Inter', sans-serif;
-      font-size: 15px;
-      color: var(--charcoal);
-      background: var(--white);
-      transition: border-color 0.2s ease;
+      background: #fafbfc;
+      transition: 0.2s;
+    }
+    .contact-form input:focus, .contact-form textarea:focus {
       outline: none;
+      border-color: #c9a84c;
+      box-shadow: 0 0 0 4px rgba(201,168,76,0.08);
     }
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus {
-      border-color: var(--gold);
+    .contact-form textarea {
+      border-radius: 24px;
+      min-height: 130px;
+      resize: vertical;
     }
-    .form-group textarea { height: 130px; resize: vertical; }
-    .contact-info { }
-    .contact-info h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 28px;
-      font-weight: 400;
-      color: var(--navy);
-      margin-bottom: 16px;
+    .contact-details i {
+      color: #c9a84c;
+      width: 2.2rem;
+      font-size: 1.3rem;
     }
-    .contact-info p {
-      font-size: 15px;
-      line-height: 1.8;
-      color: var(--charcoal-light);
-      margin-bottom: 36px;
-    }
-    .contact-detail {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-    .contact-detail-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: rgba(201,168,76,0.1);
-      border: 1.5px solid rgba(201,168,76,0.3);
+    .contact-details p {
       display: flex;
       align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
+      gap: 0.6rem;
+      margin: 0.8rem 0;
     }
-    .contact-detail-icon svg { width: 18px; height: 18px; stroke: var(--gold); }
-    .contact-detail-text strong {
-      display: block;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 3px;
-      letter-spacing: 0.04em;
-    }
-    .contact-detail-text span { font-size: 14px; color: var(--charcoal-light); }
 
-    /* ===================== FOOTER ===================== */
-    footer {
-      background: var(--navy);
-      padding: 80px 0 0;
+    /* footer */
+    .footer {
+      background: #0a1a2f;
+      color: #d0d4dd;
+      padding: 3rem 0 1.5rem;
     }
-    .footer-main {
+    .footer-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-      gap: 48px;
-      padding-bottom: 60px;
+      grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+      gap: 2rem;
     }
-    .footer-brand { }
-    .footer-logo-top {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px;
-      font-weight: 500;
+    .footer a {
+      color: #c9a84c;
+      text-decoration: none;
     }
-    .footer-logo-top .g { color: var(--gold); font-size: 26px; }
-    .footer-logo-top .lantara { color: var(--white); }
-    .footer-logo-top .global { color: var(--gold); }
-    .footer-tagline {
-      font-size: 9px;
-      color: rgba(255,255,255,0.4);
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-      margin-top: 4px;
-    }
-    .footer-desc {
-      font-size: 14px;
-      line-height: 1.75;
-      color: rgba(255,255,255,0.55);
-      margin-bottom: 28px;
-      max-width: 280px;
-    }
-    .social-icons {
-      display: flex;
-      gap: 12px;
-    }
-    .social-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: border-color 0.2s ease;
-    }
-    .social-icon:hover { border-color: var(--gold); }
-    .social-icon svg { width: 16px; height: 16px; stroke: rgba(255,255,255,0.6); transition: stroke 0.2s ease; }
-    .social-icon:hover svg { stroke: var(--gold); }
-    .footer-col h4 {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 20px;
-    }
-    .footer-col ul li {
-      margin-bottom: 10px;
-    }
-    .footer-col ul li a {
-      font-size: 14px;
-      color: rgba(255,255,255,0.55);
-      transition: color 0.2s ease;
-    }
-    .footer-col ul li a:hover { color: var(--gold); }
     .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding: 24px 0;
+      border-top: 1px solid #1f3145;
+      padding-top: 1.8rem;
+      margin-top: 2rem;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      font-size: 0.8rem;
+      color: #8896a8;
     }
-    .footer-bottom p { font-size: 13px; color: rgba(255,255,255,0.4); }
-    .footer-bottom-links {
-      display: flex;
-      gap: 24px;
-    }
-    .footer-bottom-links a { font-size: 13px; color: rgba(255,255,255,0.4); transition: color 0.2s ease; }
-    .footer-bottom-links a:hover { color: var(--gold); }
 
-    /* ===================== RESPONSIVE ===================== */
-    @media (max-width: 1100px) {
-      :root { --section-pad: 80px; }
-      .container { padding: 0 32px; }
-      .nav-inner { padding: 0 32px; }
-      .features-grid { gap: 32px; }
-      .footer-main { grid-template-columns: 1fr 1fr; gap: 40px; }
-    }
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; height: auto; }
-      .hero-text { padding: 80px 40px; }
-      .hero-image { height: 400px; }
-      .features-grid { grid-template-columns: 1fr; max-width: 480px; margin: 72px auto 0; }
-      .split-section.schools,
-      .split-section.teachers { grid-template-columns: 1fr; }
-      .split-section.teachers .split-image { order: -1; }
-      .split-image { height: 380px; }
-      .split-content { padding: 60px 40px; }
-      .about-section { grid-template-columns: 1fr; }
-      .about-image { height: 380px; }
-      .about-content { padding: 60px 40px; }
-      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
-      .timeline { flex-direction: column; align-items: center; gap: 32px; }
-      .timeline::before { display: none; }
+    /* responsiveness */
+    @media (max-width: 992px) {
       .nav-links { display: none; }
-      .nav-links.open {
-        display: flex;
-        flex-direction: column;
-        position: fixed;
-        top: 68px;
-        left: 0;
-        right: 0;
-        background: var(--navy);
-        padding: 20px 32px 32px;
-        gap: 4px;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-      }
       .hamburger { display: flex; }
+      .hero { height: auto; min-height: 700px; }
+      .hero-content { flex-direction: column; }
+      .hero-text { padding: 2rem; }
+      .hero-image { min-height: 300px; flex: 1; }
+      .split { flex-direction: column; }
+      .split .image { width: 100%; min-height: 280px; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .timeline { flex-wrap: wrap; gap: 1.5rem; justify-content: center; }
+      .timeline::before { display: none; }
     }
     @media (max-width: 600px) {
-      :root { --section-pad: 60px; }
-      .container, .nav-inner { padding: 0 20px; }
-      .hero-text { padding: 60px 20px; }
-      .hero-buttons { flex-direction: column; }
-      .hero-buttons .btn { text-align: center; }
-      .trust-indicators { flex-wrap: wrap; gap: 12px; }
-      .trust-item { border-right: none; margin-right: 0; padding-right: 0; }
-      .split-content { padding: 48px 20px; }
-      .about-content { padding: 48px 20px; }
-      .footer-main { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+      .hero-text h1 { font-size: 2.4rem; }
+      .hero-buttons .btn-gold, .hero-buttons .btn-outline-gold { width: 100%; text-align: center; }
+      .trust-row { gap: 1rem; justify-content: center; }
+      .footer-grid { grid-template-columns: 1fr; }
     }
+    /* utility */
+    .bg-light { background: #f8f9fc; }
+    .text-center { text-align: center; }
+    .mt-2 { margin-top: 2rem; }
+    .mb-2 { margin-bottom: 2rem; }
+    .gold { color: #c9a84c; }
+    .w-100 { width: 100%; }
+
+    /* images as placeholder – replaced with actual photography in production */
+    .img-classroom { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400"><rect width="600" height="400" fill="%230a1a2f"/><circle cx="200" cy="180" r="80" fill="%23c9a84c" opacity="0.25"/><circle cx="400" cy="250" r="100" fill="%23c9a84c" opacity="0.15"/></svg>'); background-size: cover; }
+    .img-campus { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400"><rect width="600" height="400" fill="%231a2d42"/><rect x="120" y="160" width="360" height="140" fill="%23c9a84c" opacity="0.2"/></svg>'); background-size: cover; }
+    .img-greatwall { background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400"><rect width="600" height="400" fill="%232a3f55"/><path d="M0 300 L600 200 L600 400 L0 400 Z" fill="%23c9a84c" opacity="0.2"/></svg>'); background-size: cover; }
   </style>
 </head>
 <body>
-
-  <!-- ===================== NAVIGATION ===================== -->
-  <nav id="navbar">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">
-        <div class="nav-logo-top"><span class="g">G</span><span class="lantara">Lantara </span><span class="global">Global</span></div>
-        <div class="nav-logo-tagline">International Education Recruitment</div>
-      </a>
-      <div class="nav-links" id="navLinks">
-        <a href="#schools">Schools</a>
-        <a href="#teachers">Teachers</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-        <a href="#">EN | 中文</a>
-        <a href="#">FAQ</a>
-        <a href="#contact" class="nav-cta">GET IN TOUCH</a>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <span class="logo-gold">G</span>
+        <span class="logo-white">Lantara</span>
+        <span class="logo-gold-global">Global</span>
+        <span class="logo-tagline">international education recruitment</span>
       </div>
-      <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#">Schools</a></li>
+        <li><a href="#">Teachers</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">EN</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#" class="get-in-touch">GET IN TOUCH</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="menu">
         <span></span><span></span><span></span>
-      </div>
+      </button>
     </div>
   </nav>
 
-  <!-- ===================== HERO ===================== -->
-  <section class="hero">
-    <div class="hero-text">
-      <h1 class="fade-up">
-        Connecting Chinese Schools<br>with Qualified,<br>
-        <span class="gold-line">Native English-speaking Teachers</span>
-      </h1>
-      <p class="fade-up">Helping Chinese educational institutions recruit exceptional native English teachers through trusted international recruitment.</p>
-      <div class="hero-buttons fade-up">
-        <a href="#schools" class="btn btn-gold">For Schools</a>
-        <a href="#teachers" class="btn btn-outline-gold">For Teachers</a>
-      </div>
-      <div class="trust-indicators fade-up">
-        <div class="trust-item">
-          <div class="trust-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
-          <span class="trust-text">Pre-screened Teachers</span>
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Connecting Chinese Schools<br>with Qualified,<br><span class="gold-highlight">Native English‑speaking Teachers</span></h1>
+        <p>Helping Chinese educational institutions recruit exceptional native English teachers through trusted international recruitment.</p>
+        <div class="hero-buttons">
+          <button class="btn-gold">FOR SCHOOLS</button>
+          <button class="btn-outline-gold">FOR TEACHERS</button>
         </div>
-        <div class="trust-item">
-          <div class="trust-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253" /></svg></div>
-          <span class="trust-text">Government Compliant</span>
-        </div>
-        <div class="trust-item">
-          <div class="trust-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" /></svg></div>
-          <span class="trust-text">Ongoing Support</span>
+        <div class="trust-row">
+          <span class="trust-item"><i class="fas fa-user-check"></i> Pre‑screened Teachers</span>
+          <span class="trust-divider"></span>
+          <span class="trust-item"><i class="fas fa-shield-alt"></i> Government Compliant</span>
+          <span class="trust-divider"></span>
+          <span class="trust-item"><i class="fas fa-headset"></i> Ongoing Support</span>
         </div>
       </div>
+      <div class="hero-image" role="img" aria-label="Teacher with students in classroom"></div>
     </div>
-    <div class="hero-image">
-      <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=900&q=80" alt="Native English teacher working with Chinese school students in a bright modern classroom" loading="eager" />
-      <div class="hero-image-overlay"></div>
-    </div>
-  </section>
+  </header>
 
-  <!-- ===================== WHY LANTARA ===================== -->
-  <section class="why-lantara">
+  <!-- WHY LANTARA -->
+  <section>
     <div class="container">
-      <div class="fade-up">
-        <h2>WHY LANTARA?</h2>
-        <div class="gold-divider"></div>
-        <p class="section-intro">We understand the unique demands of international education recruitment. Lantara Global delivers reliable, ethical, and expertly managed placement services — for schools that demand quality and teachers who deserve exceptional support.</p>
-      </div>
-      <div class="features-grid">
-        <div class="feature-card fade-up">
-          <div class="feature-icon">
-            <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="36" cy="36" r="35" stroke="#c9a84c" stroke-width="1.5" opacity="0.2"/>
-              <circle cx="28" cy="30" r="7" stroke="#c9a84c" stroke-width="1.8"/>
-              <circle cx="44" cy="30" r="7" stroke="#c9a84c" stroke-width="1.8"/>
-              <path d="M14 52c0-7.18 6.27-13 14-13h16c7.73 0 14 5.82 14 13" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3>Rigorous Screening</h3>
-          <p>Every candidate undergoes a thorough multi-stage evaluation — from qualifications and experience to background checks and trial lessons — ensuring only the most capable teachers reach your school.</p>
-        </div>
-        <div class="feature-card fade-up">
-          <div class="feature-icon">
-            <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="36" cy="36" r="35" stroke="#c9a84c" stroke-width="1.5" opacity="0.2"/>
-              <circle cx="36" cy="36" r="18" stroke="#c9a84c" stroke-width="1.8"/>
-              <path d="M18 36h36M36 18c-4 5-6 11-6 18s2 13 6 18M36 18c4 5 6 11 6 18s-2 13-6 18" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3>Global Recruitment</h3>
-          <p>We source qualified native English-speaking teachers across the UK, USA, Canada, Australia, South Africa, and Ireland — providing your school with a diverse, high-calibre candidate pool.</p>
-        </div>
-        <div class="feature-card fade-up">
-          <div class="feature-icon">
-            <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="36" cy="36" r="35" stroke="#c9a84c" stroke-width="1.5" opacity="0.2"/>
-              <path d="M22 44c0-3 1.5-5 4-6.5L36 32l10 5.5c2.5 1.5 4 3.5 4 6.5" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M28 36c0-4.42 3.58-8 8-8s8 3.58 8 8" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round"/>
-              <path d="M26 48h20" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3>Fully Supported</h3>
-          <p>Our commitment doesn't end at placement. We provide continuous support throughout the contract — helping schools and teachers navigate visa applications, cultural transitions, and any challenges that arise.</p>
-        </div>
+      <h2 class="section-title">WHY LANTARA?</h2>
+      <div class="gold-divider"></div>
+      <p class="section-sub">We deliver reliable recruitment solutions that schools and teachers trust — with integrity and global expertise.</p>
+      <div class="feature-grid">
+        <div class="feature-card"><i class="fas fa-users"></i><h3>Recruitment Screening</h3><p>Rigorous candidate evaluation ensures only the most qualified native teachers are presented.</p></div>
+        <div class="feature-card"><i class="fas fa-globe-asia"></i><h3>Global Recruitment</h3><p>Worldwide sourcing connects Chinese schools with top English teachers from the UK, US, Canada, and beyond.</p></div>
+        <div class="feature-card"><i class="fas fa-handshake"></i><h3>Fully Supported</h3><p>Continuous support after placement, ensuring smooth integration and long‑term success.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== SCHOOLS ===================== -->
-  <section class="split-section schools" id="schools">
-    <div class="split-content">
-      <div class="fade-up">
-        <span class="section-label">For Schools</span>
+  <!-- FOR SCHOOLS -->
+  <section class="bg-light">
+    <div class="container split">
+      <div class="text">
+        <span class="gold-label">FOR SCHOOLS</span>
         <h2>Recruiting Teachers.<br>Building Stronger Schools.</h2>
-        <div class="gold-divider left"></div>
-        <p>Lantara Global partners with Chinese primary and secondary schools to source, evaluate, and place exceptional native English-speaking educators. We manage the entire process so your administration team can focus on what matters most — education.</p>
-        <ul class="split-list">
-          <li><span class="list-bullet"></span> Fully qualified native English speakers with verified credentials</li>
-          <li><span class="list-bullet"></span> Thorough background verification and reference checks</li>
-          <li><span class="list-bullet"></span> Interview coordination and shortlisting assistance</li>
-          <li><span class="list-bullet"></span> Visa guidance and documentation support</li>
-          <li><span class="list-bullet"></span> Ongoing liaison throughout the contract period</li>
+        <p>Lantara helps schools find exceptional English teachers who inspire students and elevate academic standards.</p>
+        <ul>
+          <li><i class="fas fa-circle gold" style="font-size: 0.5rem;"></i> Qualified native speakers</li>
+          <li><i class="fas fa-circle gold" style="font-size: 0.5rem;"></i> Careful background verification</li>
+          <li><i class="fas fa-circle gold" style="font-size: 0.5rem;"></i> Interview assistance</li>
+          <li><i class="fas fa-circle gold" style="font-size: 0.5rem;"></i> Visa guidance</li>
+          <li><i class="fas fa-circle gold" style="font-size: 0.5rem;"></i> Ongoing support</li>
         </ul>
-        <a href="#contact" class="btn btn-navy">Request Recruitment</a>
+        <button class="btn-navy">REQUEST RECRUITMENT</button>
       </div>
-    </div>
-    <div class="split-image">
-      <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=900&q=80" alt="Premium Chinese school campus with traditional architecture, green lawns and blue sky" loading="lazy" />
+      <div class="image img-campus" role="img" aria-label="Campus with green lawns"></div>
     </div>
   </section>
 
-  <!-- ===================== TEACHERS ===================== -->
-  <section class="split-section teachers" id="teachers">
-    <div class="split-image">
-      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=900&q=80" alt="Native English teacher engaging enthusiastically with students in a bright classroom" loading="lazy" />
-    </div>
-    <div class="split-content">
-      <div class="fade-up">
-        <span class="section-label">For Teachers</span>
+  <!-- FOR TEACHERS -->
+  <section>
+    <div class="container split">
+      <div class="image img-classroom" role="img" aria-label="Teacher engaging students"></div>
+      <div class="text">
+        <span class="gold-label">FOR TEACHERS</span>
         <h2>Meaningful Opportunities.<br>Professional Support.</h2>
-        <div class="gold-divider left"></div>
-        <p>Discover rewarding teaching positions at reputable Chinese schools across the country. Lantara Global guides you through every step — from your initial application to your first day in the classroom and beyond.</p>
-        <ul class="split-list">
-          <li><span class="check-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span> Competitive salaries and accommodation packages</li>
-          <li><span class="check-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span> Continuous professional development opportunities</li>
-          <li><span class="check-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span> Carefully vetted, reliable school partnerships</li>
-          <li><span class="check-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span> Safe, well-managed placements throughout China</li>
-          <li><span class="check-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg></span> Full visa application guidance and documentation</li>
+        <p>Explore career opportunities across China with competitive salaries, professional development, and reliable school partnerships.</p>
+        <ul>
+          <li><i class="fas fa-check gold"></i> Safe placements</li>
+          <li><i class="fas fa-check gold"></i> Visa assistance</li>
+          <li><i class="fas fa-check gold"></i> Competitive salaries</li>
+          <li><i class="fas fa-check gold"></i> Professional development</li>
+          <li><i class="fas fa-check gold"></i> Reliable school partnerships</li>
         </ul>
-        <a href="#contact" class="btn btn-navy">View Opportunities</a>
+        <button class="btn-navy">VIEW OPPORTUNITIES</button>
       </div>
     </div>
   </section>
 
-  <!-- ===================== TIMELINE ===================== -->
-  <section class="timeline-section">
+  <!-- TIMELINE -->
+  <section class="bg-light">
     <div class="container">
-      <div class="fade-up">
-        <h2>OUR RECRUITMENT PROCESS</h2>
-        <div class="gold-divider"></div>
-      </div>
+      <h2 class="section-title">OUR RECRUITMENT PROCESS</h2>
+      <div class="gold-divider"></div>
       <div class="timeline">
-        <div class="timeline-step fade-up">
-          <div class="timeline-icon">
-            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
-          </div>
-          <div class="timeline-num">01</div>
-          <div class="timeline-title">Application</div>
-          <div class="timeline-desc">Submit your profile or school request through our secure online form.</div>
-        </div>
-        <div class="timeline-step fade-up">
-          <div class="timeline-icon">
-            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
-          </div>
-          <div class="timeline-num">02</div>
-          <div class="timeline-title">Evaluation</div>
-          <div class="timeline-desc">Thorough interview, qualification review, and background screening.</div>
-        </div>
-        <div class="timeline-step fade-up">
-          <div class="timeline-icon">
-            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z"/></svg>
-          </div>
-          <div class="timeline-num">03</div>
-          <div class="timeline-title">School Matching</div>
-          <div class="timeline-desc">Candidates are carefully introduced to suitable partner schools.</div>
-        </div>
-        <div class="timeline-step fade-up">
-          <div class="timeline-icon">
-            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
-          </div>
-          <div class="timeline-num">04</div>
-          <div class="timeline-title">Interview</div>
-          <div class="timeline-desc">Facilitated online interviews between schools and shortlisted candidates.</div>
-        </div>
-        <div class="timeline-step fade-up">
-          <div class="timeline-icon">
-            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z"/></svg>
-          </div>
-          <div class="timeline-num">05</div>
-          <div class="timeline-title">Documentation</div>
-          <div class="timeline-desc">We manage visa paperwork, contracts, and all necessary compliance.</div>
-        </div>
-        <div class="timeline-step fade-up">
-          <div class="timeline-icon">
-            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
-          </div>
-          <div class="timeline-num">06</div>
-          <div class="timeline-title">Departure</div>
-          <div class="timeline-desc">Pre-departure briefing, travel coordination, and in-country onboarding.</div>
-        </div>
+        <div class="timeline-item"><div class="timeline-icon"><i class="fas fa-file-alt"></i></div><p>Application</p><small>Submit application</small></div>
+        <div class="timeline-item"><div class="timeline-icon"><i class="fas fa-comments"></i></div><p>Evaluation</p><small>Interview & screening</small></div>
+        <div class="timeline-item"><div class="timeline-icon"><i class="fas fa-school"></i></div><p>School Matching</p><small>Candidate introduced</small></div>
+        <div class="timeline-item"><div class="timeline-icon"><i class="fas fa-video"></i></div><p>Interview</p><small>Online interviews</small></div>
+        <div class="timeline-item"><div class="timeline-icon"><i class="fas fa-passport"></i></div><p>Documentation</p><small>Visa paperwork</small></div>
+        <div class="timeline-item"><div class="timeline-icon"><i class="fas fa-plane"></i></div><p>Departure</p><small>Travel & onboarding</small></div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== ABOUT ===================== -->
-  <section class="about-section" id="about">
-    <div class="about-content">
-      <div class="fade-up">
-        <span class="section-label">About Us</span>
-        <h2>ABOUT LANTARA GLOBAL</h2>
-        <div class="gold-divider left"></div>
-        <p>Lantara Global was founded on a commitment to ethical, transparent, and professional international education recruitment. We bridge the gap between ambitious Chinese schools and highly qualified native English-speaking teachers from across the globe.</p>
-        <p>With deep experience navigating both Western and Chinese educational environments, we understand what it takes to make a placement successful — for the school, the teacher, and most importantly, the students.</p>
-        <p>Our dedicated team provides end-to-end support, ensuring every placement is managed with the diligence, care, and cultural sensitivity that international recruitment demands.</p>
-        <a href="#contact" class="btn btn-outline-gold" style="margin-top:8px">Learn More</a>
+  <!-- ABOUT -->
+  <section>
+    <div class="container split">
+      <div class="text">
+        <span class="gold-label">ABOUT LANTARA GLOBAL</span>
+        <h2>International Expertise,<br>Ethical Recruitment</h2>
+        <p>With years of experience connecting educators and institutions across continents, we are committed to ethical recruitment that benefits schools and teachers alike.</p>
+        <p style="margin-top: 0.8rem; font-weight: 300;">Our mission: to build a bridge of trust between Chinese schools and the world's best native English teachers.</p>
+        <button class="btn-navy" style="margin-top: 1.8rem;">LEARN MORE</button>
       </div>
-    </div>
-    <div class="about-image">
-      <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=900&q=80" alt="Great Wall of China during golden sunset representing international connection and cultural bridge" loading="lazy" />
+      <div class="image img-greatwall" role="img" aria-label="Great Wall of China at sunset"></div>
     </div>
   </section>
 
-  <!-- ===================== CONTACT ===================== -->
-  <section class="contact-section" id="contact">
+  <!-- CONTACT -->
+  <section class="bg-light">
     <div class="container">
-      <div class="section-heading fade-up">
-        <h2>GET IN TOUCH</h2>
-        <div class="gold-divider"></div>
-        <p style="color:#5a5a5a;font-size:16px;margin-top:0;">Whether you're a school seeking exceptional teachers or a teacher ready for your next adventure — we'd love to hear from you.</p>
-      </div>
+      <h2 class="section-title">GET IN TOUCH</h2>
+      <div class="gold-divider"></div>
       <div class="contact-grid">
-        <div class="contact-form fade-up">
-          <form onsubmit="handleSubmit(event)">
-            <div class="form-group">
-              <label for="name">Full Name</label>
-              <input type="text" id="name" name="name" placeholder="Your full name" required />
-            </div>
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="your@email.com" required />
-            </div>
-            <div class="form-group">
-              <label for="institution">School or Institution</label>
-              <input type="text" id="institution" name="institution" placeholder="School or organisation name" />
-            </div>
-            <div class="form-group">
-              <label for="role">I am a</label>
-              <select id="role" name="role">
-                <option value="">Select your role</option>
-                <option>School Administrator</option>
-                <option>Native English Teacher</option>
-                <option>Recruitment Partner</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Tell us how we can help…" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-gold" style="width:100%;font-size:14px;">Send Message</button>
+        <div class="contact-form">
+          <form>
+            <input type="text" placeholder="Name" aria-label="Name">
+            <input type="email" placeholder="Email" aria-label="Email">
+            <input type="text" placeholder="School or Institution" aria-label="School">
+            <textarea placeholder="Message" aria-label="Message"></textarea>
+            <button class="btn-gold" style="width:100%; justify-content:center;">SUBMIT</button>
           </form>
         </div>
-        <div class="contact-info fade-up">
-          <h3>We'd love to hear from you.</h3>
-          <p>Our team is available to assist schools and teachers throughout the recruitment journey. Reach out and a member of our team will respond within one business day.</p>
-          <div class="contact-detail">
-            <div class="contact-detail-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg></div>
-            <div class="contact-detail-text"><strong>Email</strong><span>hello@lantaraglobal.com</span></div>
-          </div>
-          <div class="contact-detail">
-            <div class="contact-detail-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg></div>
-            <div class="contact-detail-text"><strong>Telephone</strong><span>+86 (0) 400 000 0000</span></div>
-          </div>
-          <div class="contact-detail">
-            <div class="contact-detail-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
-            <div class="contact-detail-text"><strong>Office Hours</strong><span>Monday – Friday, 09:00 – 18:00 CST</span></div>
-          </div>
-          <div class="contact-detail">
-            <div class="contact-detail-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg></div>
-            <div class="contact-detail-text"><strong>Recruitment Availability</strong><span>Accepting applications year-round</span></div>
-          </div>
+        <div class="contact-details">
+          <p><i class="fas fa-envelope"></i> hello@lantaraglobal.com</p>
+          <p><i class="fas fa-phone-alt"></i> +86 10 1234 5678</p>
+          <p><i class="fas fa-clock"></i> Office hours: Mon–Fri 9:00–18:00</p>
+          <p><i class="fas fa-users"></i> Recruitment availability: year‑round</p>
+          <div style="margin-top: 2rem; opacity:0.2; font-size: 3rem; text-align: center;"><i class="fas fa-map-marked-alt"></i></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===================== FOOTER ===================== -->
-  <footer>
+  <!-- FOOTER -->
+  <footer class="footer">
     <div class="container">
-      <div class="footer-main">
-        <div class="footer-brand">
-          <div class="footer-logo-top"><span class="g">G</span><span class="lantara">Lantara </span><span class="global">Global</span></div>
-          <div class="footer-tagline">International Education Recruitment</div>
-          <p class="footer-desc">Connecting qualified native English-speaking teachers with reputable Chinese schools through ethical, professional, and fully supported international recruitment.</p>
-          <div class="social-icons">
-            <a href="#" class="social-icon" aria-label="LinkedIn"><svg fill="none" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="4" cy="4" r="2" stroke-width="1.8"/></svg></a>
-            <a href="#" class="social-icon" aria-label="Facebook"><svg fill="none" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-            <a href="#" class="social-icon" aria-label="WeChat"><svg fill="none" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-          </div>
+      <div class="footer-grid">
+        <div>
+          <div class="logo" style="margin-bottom: 0.8rem;"><span class="logo-gold">G</span><span class="logo-white">Lantara</span><span class="logo-gold-global">Global</span></div>
+          <p style="font-weight: 300; max-width: 260px;">Connecting schools and teachers with integrity, worldwide.</p>
+          <div style="display: flex; gap: 1rem; margin-top: 0.8rem;"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-weixin"></i></a></div>
         </div>
-        <div class="footer-col">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#">Our Team</a></li>
-            <li><a href="#">Mission &amp; Values</a></li>
-            <li><a href="#">Partnerships</a></li>
-            <li><a href="#">Careers</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Schools</h4>
-          <ul>
-            <li><a href="#schools">Our Services</a></li>
-            <li><a href="#">School Partners</a></li>
-            <li><a href="#">Request a Teacher</a></li>
-            <li><a href="#">Compliance</a></li>
-            <li><a href="#">Testimonials</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Teachers</h4>
-          <ul>
-            <li><a href="#teachers">Opportunities</a></li>
-            <li><a href="#">Requirements</a></li>
-            <li><a href="#">Life in China</a></li>
-            <li><a href="#">Visa Guide</a></li>
-            <li><a href="#">Teacher Stories</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contact</h4>
-          <ul>
-            <li><a href="#contact">Get in Touch</a></li>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Support</a></li>
-            <li><a href="#">Office Locations</a></li>
-          </ul>
-        </div>
+        <div><h4 style="color:#fff; margin-bottom: 1rem;">Company</h4><a href="#">About</a><br><a href="#">Careers</a><br><a href="#">Blog</a></div>
+        <div><h4 style="color:#fff; margin-bottom: 1rem;">Schools</h4><a href="#">Recruitment</a><br><a href="#">Testimonials</a><br><a href="#">FAQ</a></div>
+        <div><h4 style="color:#fff; margin-bottom: 1rem;">Teachers</h4><a href="#">Opportunities</a><br><a href="#">Support</a><br><a href="#">Visa</a></div>
+        <div><h4 style="color:#fff; margin-bottom: 1rem;">Contact</h4><a href="#">Get in Touch</a><br><a href="#">+86 10 1234 5678</a><br><a href="#">hello@lantaraglobal.com</a></div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 Lantara Global. All rights reserved.</p>
-        <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">EN | 中文</a>
-        </div>
-      </div>
+      <div class="footer-bottom"><span>© 2026 Lantara Global. All rights reserved.</span><span><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Language</a></span></div>
     </div>
   </footer>
 
-  <!-- ===================== JAVASCRIPT ===================== -->
   <script>
-    // Scrolled nav
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    // scroll shadow & shrink
+    window.addEventListener('scroll', function() {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 30) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
     });
-
-    // Hamburger menu
-    function toggleMenu() {
-      document.getElementById('navLinks').classList.toggle('open');
-    }
-
-    // Fade-up on scroll
-    const fadeEls = document.querySelectorAll('.fade-up');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('visible'), i * 80);
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    fadeEls.forEach(el => observer.observe(el));
-
-    // Trigger hero elements on load
-    window.addEventListener('load', () => {
-      document.querySelectorAll('.hero .fade-up').forEach((el, i) => {
-        setTimeout(() => el.classList.add('visible'), 200 + i * 150);
-      });
+    // mobile hamburger toggle (simple demo)
+    document.getElementById('hamburger').addEventListener('click', function() {
+      const links = document.getElementById('navLinks');
+      if (links.style.display === 'flex') links.style.display = 'none';
+      else links.style.display = 'flex';
     });
-
-    // Contact form
-    function handleSubmit(e) {
-      e.preventDefault();
-      const btn = e.target.querySelector('button[type="submit"]');
-      btn.textContent = 'Message Sent ✓';
-      btn.style.background = '#2d6a4f';
-      setTimeout(() => {
-        btn.textContent = 'Send Message';
-        btn.style.background = '';
-        e.target.reset();
-      }, 3000);
-    }
   </script>
 </body>
 </html>
